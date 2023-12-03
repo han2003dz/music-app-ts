@@ -9,6 +9,6 @@ export const topics = async (req: Request, res: Response) => {
 
   res.render("client/pages/topics/index", {
     pageTitle: "Trang topics",
-    topics: topics,
+    
   });
 };
