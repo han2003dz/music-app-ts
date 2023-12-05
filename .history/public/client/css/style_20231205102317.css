@@ -1,17 +1,4 @@
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-}
 
 /* Header */
 .header {
@@ -20,6 +7,7 @@ ul {
 }
 
 .header .inner-logo img {
+  
   max-height: 50px;
   max-width: 100%;
 }
@@ -45,7 +33,6 @@ ul {
   color: #fff;
   text-align: center;
   padding: 10px;
-  margin-top: auto;
 }
 /* End Footer */
 
