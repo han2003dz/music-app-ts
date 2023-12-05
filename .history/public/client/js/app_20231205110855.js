@@ -1,15 +1,10 @@
 // APlayer
 const aplayer = document.querySelector("#aplayer");
-console.log(aplayer);
 if (aplayer) {
   let dataSong = aplayer.getAttribute("data-song");
   dataSong = JSON.parse(dataSong);
-
-  console.log(dataSong);
-
   let dataSinger = aplayer.getAttribute("data-singer");
   dataSinger = JSON.parse(dataSinger);
-
   const ap = new APlayer({
     container: aplayer,
     audio: [
