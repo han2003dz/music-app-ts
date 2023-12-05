@@ -5,7 +5,7 @@
 }
 
 .header .inner-logo img {
-  
+  display: block;
   max-height: 50px;
   max-width: 100%;
 }

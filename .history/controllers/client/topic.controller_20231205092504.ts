@@ -9,7 +9,7 @@ export const topics = async (req: Request, res: Response) => {
   });
 
   res.render("client/pages/topics/index", {
-    pageTitle: "Chủ đề bài hát",
+    pageTitle: "Trang topics",
     topics: topics,
   });
 };
