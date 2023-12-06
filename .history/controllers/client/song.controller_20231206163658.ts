@@ -53,14 +53,6 @@ export const detail = async (req: Request, res: Response) => {
     deleted: false,
     status: "active",
   }).select("title");
-
-  const favoriteSong = await FavoriteSong.findOne({
-    // userId: "",
-    songId: song.id,
-  });
-
-  song["isFavoriteSong"] = favoriteSong ? true : false;
-
   res.render("client/pages/songs/detail", {
     pageTile: "chi tiết bài hát",
     song: song,

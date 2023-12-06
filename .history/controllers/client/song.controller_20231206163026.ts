@@ -53,14 +53,6 @@ export const detail = async (req: Request, res: Response) => {
     deleted: false,
     status: "active",
   }).select("title");
-
-  const favoriteSong = await FavoriteSong.findOne({
-    // userId: "",
-    songId: song.id,
-  });
-
-  song["isFavoriteSong"] = favoriteSong ? true : false;
-
   res.render("client/pages/songs/detail", {
     pageTile: "chi tiết bài hát",
     song: song,
@@ -69,7 +61,7 @@ export const detail = async (req: Request, res: Response) => {
   });
 };
 
-// [PATCh] /songs/like/:typeLike/:idSong
+// [PATCh] /songs/:typeLike/:idSong
 export const like = async (req: Request, res: Response) => {
   const idSong: string = req.params.idSong;
   const typeLike: string = req.params.typeLike;
@@ -106,34 +98,9 @@ export const like = async (req: Request, res: Response) => {
   });
 };
 
-// [PATCh] /songs/favorite/:typeFavorite/:idSong
+
+// [PATCh] /songs/:typeFavorite/:idSong
 export const favorite = async (req: Request, res: Response) => {
   const idSong: string = req.params.idSong;
   const typeFavorite: string = req.params.typeFavorite;
-  switch (typeFavorite) {
-    case "favorite":
-      const existFavoriteSong = await FavoriteSong.findOne({
-        songId: idSong,
-      });
-      if (!existFavoriteSong) {
-        const record = new FavoriteSong({
-          // userId: "",
-          songId: idSong,
-        });
-        await record.save();
-      }
-      break;
-
-    case "unfavorite":
-      await FavoriteSong.deleteOne({
-        songId: idSong,
-      });
-      break;
-    default:
-      break;
-  }
-  res.json({
-    code: 200,
-    message: "Thành công!",
-  });
 };

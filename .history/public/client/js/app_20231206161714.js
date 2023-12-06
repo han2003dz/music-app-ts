@@ -63,6 +63,7 @@ if (btnLike) {
 }
 // end button like
 
+
 // button favorite
 const btnFavorite = document.querySelector("[button-favorite]");
 
@@ -72,7 +73,7 @@ if (btnFavorite) {
 
     const isActive = btnFavorite.classList.contains("active");
 
-    const typeFavorite = isActive ? "unfavorite" : "favorite";
+    const typeFavorite = isActive ? "disfavorite" : "favorite";
     const link = `/songs/favorite/${typeFavorite}/${idSong}`;
 
     const optionsMethod = {
@@ -83,8 +84,9 @@ if (btnFavorite) {
       .then((res) => res.json())
       .then((data) => {
         if (data && data.code == 200) {
-          console.log(data);
-          btnFavorite.classList.toggle("active");
+          const dataFavorite = btnfavorite.querySelector("[data-favorite]");
+          datafavorite.innerHTML = `${data.favorite} favorite`;
+          btnfavorite.classList.toggle("active");
         }
       });
   });

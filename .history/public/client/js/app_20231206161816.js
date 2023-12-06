@@ -83,7 +83,8 @@ if (btnFavorite) {
       .then((res) => res.json())
       .then((data) => {
         if (data && data.code == 200) {
-          console.log(data);
+          const dataFavorite = btnFavorite.querySelector("[data-favorite]");
+          dataFavorite.innerHTML = `${data.favorite} favorite`;
           btnFavorite.classList.toggle("active");
         }
       });
