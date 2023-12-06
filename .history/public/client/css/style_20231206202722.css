@@ -251,6 +251,7 @@ ul {
   font-size: 14px;
   padding: 10px 15px;
 }
+/* End singer-detail */
 
 .song-item .inner-content .inner-heart {
   font-size: 13px;
@@ -266,4 +267,3 @@ ul {
 .song-item .inner-content .inner-heart.active i {
   font-weight: 900;
 }
-/* End singer-detail */
