@@ -1,0 +1,2 @@
+
+// [GET] /admin/dashboard

@@ -10,16 +10,6 @@ import path from "path";
 
 dotenv.config();
 
-database.connect();
-
-const app: Express = express();
-const port: number | string = process.env.PORT || 3000;
-
-app.use(express.static("public"));
-
-app.set("views", "./views");
-app.set("view engine", "pug");
-
 // TinyMCE
 app.use(
   "/tinymce",
@@ -32,6 +22,16 @@ app.locals.prefixAdmin = systemConfig.prefixAdmin;
 
 // Routes Admin
 adminRoutes(app);
+
+database.connect();
+
+const app: Express = express();
+const port: number | string = process.env.PORT || 3000;
+
+app.use(express.static("public"));
+
+app.set("views", "./views");
+app.set("view engine", "pug");
 
 // Routes Client
 clientRoutes(app);
