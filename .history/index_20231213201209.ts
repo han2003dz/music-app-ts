@@ -7,7 +7,6 @@ import clientRoutes from "./routes/client/index.route";
 
 import { systemConfig } from "./config/config";
 import path from "path";
-import bodyParser from "body-parser";
 
 dotenv.config();
 
