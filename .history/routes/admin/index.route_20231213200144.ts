@@ -9,7 +9,6 @@ const adminRoutes = (app: Express): void => {
   app.use(`${PATH_ADMIN}/dashboard`, dashboardRoutes);
 
   app.use(`${PATH_ADMIN}/topics`, topicRoutes);
-  
   app.use(`${PATH_ADMIN}/songs`, songRoutes);
 };
 
