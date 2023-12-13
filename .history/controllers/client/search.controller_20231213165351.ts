@@ -20,40 +20,16 @@ export const result = async (req: Request, res: Response) => {
         const infoSinger = await Singer.findOne({
           _id: song.singerId,
         });
-        arrSongs.push({
-          id: song.id,
-          title: song.title,
-          avatar: song.avatar,
-          slug: song.slug,
-          like: song.like,
-          infoSinger: {
-            fullName: infoSinger.fullName,
-          },
-        });
+        song["infoSinger"] = infoSinger;
       }
+
+      arrSongs = songs;
     }
   }
 
-  switch (type) {
-    case "result":
-      res.render("client/pages/search/result", {
-        pageTitle: `Kết quả: ${keyword}`,
-        keyword: keyword,
-        songs: arrSongs,
-      });
-      break;
-    case "suggest":
-      res.json({
-        code: 200,
-        message: "Thành công!",
-        songs: arrSongs,
-      });
-      break;
-    default:
-      res.json({
-        code: 400,
-        message: "Lỗi!",
-      });
-      break;
-  }
+  res.render("client/pages/search/result", {
+    pageTitle: `Kết quả: ${keyword}`,
+    keyword: keyword,
+    songs: arrSongs,
+  });
 };

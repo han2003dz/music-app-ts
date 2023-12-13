@@ -46,7 +46,7 @@ export const result = async (req: Request, res: Response) => {
       res.json({
         code: 200,
         message: "Thành công!",
-        songs: arrSongs,
+        songs: newSongs,
       });
       break;
     default:

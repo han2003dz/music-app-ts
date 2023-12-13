@@ -20,7 +20,7 @@ export const result = async (req: Request, res: Response) => {
         const infoSinger = await Singer.findOne({
           _id: song.singerId,
         });
-        arrSongs.push({
+        newSongs.push({
           id: song.id,
           title: song.title,
           avatar: song.avatar,
@@ -31,29 +31,14 @@ export const result = async (req: Request, res: Response) => {
           },
         });
       }
+
+      arrSongs = songs;
     }
   }
 
-  switch (type) {
-    case "result":
-      res.render("client/pages/search/result", {
-        pageTitle: `Kết quả: ${keyword}`,
-        keyword: keyword,
-        songs: arrSongs,
-      });
-      break;
-    case "suggest":
-      res.json({
-        code: 200,
-        message: "Thành công!",
-        songs: arrSongs,
-      });
-      break;
-    default:
-      res.json({
-        code: 400,
-        message: "Lỗi!",
-      });
-      break;
-  }
+  res.render("client/pages/search/result", {
+    pageTitle: `Kết quả: ${keyword}`,
+    keyword: keyword,
+    songs: arrSongs,
+  });
 };

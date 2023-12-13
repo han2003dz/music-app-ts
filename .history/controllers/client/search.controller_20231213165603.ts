@@ -32,28 +32,15 @@ export const result = async (req: Request, res: Response) => {
         });
       }
     }
+
+    
+
+
   }
 
-  switch (type) {
-    case "result":
-      res.render("client/pages/search/result", {
-        pageTitle: `Kết quả: ${keyword}`,
-        keyword: keyword,
-        songs: arrSongs,
-      });
-      break;
-    case "suggest":
-      res.json({
-        code: 200,
-        message: "Thành công!",
-        songs: arrSongs,
-      });
-      break;
-    default:
-      res.json({
-        code: 400,
-        message: "Lỗi!",
-      });
-      break;
-  }
+  res.render("client/pages/search/result", {
+    pageTitle: `Kết quả: ${keyword}`,
+    keyword: keyword,
+    songs: arrSongs,
+  });
 };
