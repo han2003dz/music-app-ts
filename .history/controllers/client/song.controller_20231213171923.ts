@@ -172,5 +172,6 @@ export const listens = async (req: Request, res: Response) => {
       code: 400,
       message: "Lỗi!"
     });
+    console.log("error: ", error)
   }
 };

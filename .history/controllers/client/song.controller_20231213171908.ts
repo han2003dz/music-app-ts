@@ -169,8 +169,10 @@ export const listens = async (req: Request, res: Response) => {
     });
   } catch (error) {
     res.json({
-      code: 400,
-      message: "Lỗi!"
+      code: 200,
+      message: "Thành công!",
+      listens: dataSong.listens,
     });
+    console.log("error: ", error)
   }
 };

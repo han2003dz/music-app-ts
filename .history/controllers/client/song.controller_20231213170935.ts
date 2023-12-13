@@ -139,38 +139,31 @@ export const favorite = async (req: Request, res: Response) => {
 };
 
 // [PATCH] /songs/listen/:idSong
-export const listens = async (req: Request, res: Response) => {
-  try {
-    const idSong: string = req.params.idSong;
+export const listen = async (req: Request, res: Response) => {
+  const idSong: string = req.params.idSong;
 
-    const song = await Song.findOne({
+  const song = await Song.findOne({
+    _id: idSong,
+  });
+
+  const listen: number = song.listen + 1;
+
+  await Song.updateOne(
+    {
       _id: idSong,
-    });
+    },
+    {
+      listen: listen,
+    }
+  );
 
-    const listens: number = song.listens + 1;
+  const songNew = await Song.findOne({
+    _id: idSong,
+  });
 
-    await Song.updateOne(
-      {
-        _id: idSong,
-      },
-      {
-        listens: listens,
-      }
-    );
-
-    const dataSong = await Song.findOne({
-      _id: idSong,
-    });
-
-    res.json({
-      code: 200,
-      message: "Thành công!",
-      listens: dataSong.listens,
-    });
-  } catch (error) {
-    res.json({
-      code: 400,
-      message: "Lỗi!"
-    });
-  }
+  res.json({
+    code: 200,
+    message: "Thành công!",
+    // listen: songNew.listen,
+  });
 };

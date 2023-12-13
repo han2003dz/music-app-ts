@@ -167,10 +167,5 @@ export const listens = async (req: Request, res: Response) => {
       message: "Thành công!",
       listens: dataSong.listens,
     });
-  } catch (error) {
-    res.json({
-      code: 400,
-      message: "Lỗi!"
-    });
-  }
+  } catch (error) {}
 };

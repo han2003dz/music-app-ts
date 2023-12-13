@@ -43,7 +43,7 @@ if (aplayer) {
       .then((data) => {
         if (data && data.code === 200) {
           const span = document.querySelector(".inner-listen span");
-          span.innerHTML = `${data.listens} lượt nghe`;
+          span.innerHTML = `${data.listen} lượt nghe`;
         }
       });
   });
