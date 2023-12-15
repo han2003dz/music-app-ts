@@ -14,23 +14,23 @@ if (listTextareaMCE.length > 0) {
       //   input.setAttribute("type", "file");
       //   input.setAttribute("accept", "image/*");
       images_upload_url: "/admin/upload",
-      // input.onchange = function () {
-      //   var file = this.files[0];
+        // input.onchange = function () {
+        //   var file = this.files[0];
 
-      //   var reader = new FileReader();
-      //   reader.onload = function () {
-      //     var id = "blobid" + new Date().getTime();
-      //     var blobCache = tinymce.activeEditor.editorUpload.blobCache;
-      //     var base64 = reader.result.split(",")[1];
-      //     var blobInfo = blobCache.create(id, file, base64);
-      //     blobCache.add(blobInfo);
+        //   var reader = new FileReader();
+        //   reader.onload = function () {
+        //     var id = "blobid" + new Date().getTime();
+        //     var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+        //     var base64 = reader.result.split(",")[1];
+        //     var blobInfo = blobCache.create(id, file, base64);
+        //     blobCache.add(blobInfo);
 
-      //     cb(blobInfo.blobUri(), { title: file.name });
-      //   };
-      //   reader.readAsDataURL(file);
-      // };
+        //     cb(blobInfo.blobUri(), { title: file.name });
+        //   };
+        //   reader.readAsDataURL(file);
+        // };
 
-      // input.click();
+        // input.click();
       // },
     });
   });
