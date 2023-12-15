@@ -3,6 +3,7 @@ extends ../../layouts/default.pug
 block main
   h1(class="mb-4") #{pageTitle}
 
+
   form(
       action=`/${prefixAdmin}/songs/create`
       method="POST"
@@ -76,14 +77,7 @@ block main
           upload-audio-play
         )
           source(src="")
-      div(class="form-group")
-        label(for="lyrics") Lời bài hát
-        textarea(
-          class="form-control"
-          id="lyrics"
-          name="lyrics"
-          rows="20"
-        )
+      
       div(class="form-group")
         label(for="desc") Mô tả
         textarea(
