@@ -100,12 +100,6 @@
 }
 /* End Image Preview */
 
-.avatar {
-  display: block;
-  border-radius: 999px;
-  object-fit: cover;
-}
-
-tr{
-  align-items: center;
+.avatar{
+  db
 }

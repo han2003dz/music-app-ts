@@ -16,6 +16,8 @@ if (uploadImage) {
 }
 // End Upload Image
 
+// End Upload Image
+
 // Upload Audio
 const uploadAudio = document.querySelector("[upload-audio]");
 if (uploadAudio) {
